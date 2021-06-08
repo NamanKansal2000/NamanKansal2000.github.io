@@ -1,2 +1,2 @@
-# NamanKansal2000.github.io
+# bake.o.pedia
 one page website for personal cooking page
