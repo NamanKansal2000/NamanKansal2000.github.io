@@ -1,0 +1,794 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500&family=Roboto:wght@100;300;400;500&display=swap');
+
+/* define a variable yellow */
+
+:root{
+    --yellow: #F7CA3E;
+    /* --lightyellow: #FDF0D5; */
+    --lightyellow: #F4CC4D;
+}
+/* for all apply this */
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all 0.2s linear;
+}
+
+h1, h3{
+    font-family: 'Oswald', sans-serif;
+
+}
+
+/* when someone selects the text */
+*::selection{
+    background: var(--yellow);
+    color: #fff;
+}
+
+
+html{
+    /* here 62.5% means 10px */
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+
+body{
+    overflow-x: hidden;
+    /* height: 200rem; */
+}
+
+/* change the style of the scrollbar */
+
+html::-webkit-scrollbar{
+    width:1.4rem;
+}
+
+html::-webkit-scrollbar-track{
+    background:#333;
+}
+
+html::-webkit-scrollbar-thumb{
+    background:var(--yellow);
+}
+
+/* strart styling header */
+header{
+    position: fixed;
+    top:0; left:0;
+    z-index: 1000;
+    width:100%;
+    background:#fff;
+    padding:1.5rem 10%;
+    box-shadow: 0 .3rem 2rem rgba(0,0,0,.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* style the logo image size */
+header .logo img{
+    height:7rem;
+}
+
+/* style navbar */
+/* align in horizontal line */
+header .navbar{
+    justify-content: center;
+}
+
+header .navbar ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+/* give space between them */
+header .navbar ul li{
+    margin-left: 3rem;
+}
+
+/* change its color and font size */
+header .navbar ul li a{
+    font-size: 1.7rem;
+    color:#666;
+}
+
+/* when on current tab or when hovered over it */
+header .navbar ul li a.active,
+header .navbar ul li a:hover{
+    color:var(--yellow);
+}
+
+/* needed when screen size is decreased so display none */
+header #menu-bar{
+    font-size: 3rem;
+    color:#666;
+    cursor: pointer;
+    display: none;
+}
+
+/* common to all sections */
+/* to arrange it on the top */
+section{
+    /* min-height: 100vh; */
+    padding: 1rem 10%;
+    padding-top: 8.5rem;
+}
+
+/*  all buttons styling */
+.btn{
+    font-size: 1.7rem;
+    padding:.7rem 4rem;
+    border-radius: 5rem;
+    margin-top: 1rem;
+    background:none;
+    color:#333;
+    cursor: pointer;
+    border:.2rem solid var(--yellow);
+}
+
+.btn:hover{
+    background:var(--yellow);
+}
+
+/* home section styling */
+.home{
+    /* min-width: 100vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* make yellow tilted rectangle */
+.home::before,
+.home::after{
+    content:'';
+    position: absolute;
+
+    height:40rem;
+    width:70rem;
+    top:5rem; right:-6rem;
+    background:var(--yellow);
+    border-radius: 3rem;
+
+    transform:rotate(-45deg);
+    z-index: -2;
+    animation: animte 1.4s linear;
+}
+
+@keyframes animte{
+    0%{
+        transform:rotate(45deg) translateY(-20rem);
+    }
+}
+
+/* .home::before{
+    top:-7rem;
+    background:#fff;
+    box-shadow: 0 1rem 4rem rgba(0,0,0,.1);
+    z-index: -1;
+} */
+
+.home::before{
+    /* since same so no need to write again*/
+    /* content:'';
+    position: absolute;
+
+    height:40rem;
+    width:70rem; */
+    top:-7rem;
+    background:#fff;
+    /* border-radius: 3rem; */
+    transform:rotate(-45deg);
+    z-index: -1;
+}
+/* 1 1 stands for same grow and shrink for all the elements in the flex and szie 39 rem */
+.home .image{
+    flex:1 1 39rem;
+}
+/* it shoulg cover complete flex blox */
+.home .image img{
+    width:100%;
+}
+
+.home .content{
+    flex:1 1 39rem;
+}
+/* chnage the color of the content */
+.home .content h3{
+    color:#333;
+    font-size: 6rem;
+}
+/* change the size padding and color of the paragraph */
+.home .content p{
+    color:#666;
+    font-size: 2rem;
+    padding:1rem 0;
+}
+
+
+/* about section begins */
+
+/* this is to make the flex boxes and bring the content in the center */
+.about{
+    /* min-width: 100vh; */
+    display: flex;
+    align-items: center;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+/* add image to the screen */
+.about .image{
+    flex: 1 1 40rem;
+    height: 60rem;
+    background: url(images/about-frame-img.png), url(images/about-making.jpg) no-repeat;
+    background-position: center;
+    /* this is to cover the whole flex box */
+    background-size: cover;
+    /* this to overlap 2nd image on the 1st one */
+    background-blend-mode: screen;
+}
+
+/* add the content section to the right of image */
+.about .content{
+    flex: 1 1 40rem;
+    padding: 2rem 4rem;
+}
+
+.about .content h3{
+    font-size: 4rem;
+    color: #333;
+}
+
+.about .content p{
+    font-size: 2rem;
+    color: #666;
+    text-align: justify;
+    padding: 1.6rem 0;
+}
+
+
+/* Postsss sectionn styling */
+
+.posts{
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+}
+
+.posts .heading{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-flow: column;
+}
+
+.posts .heading h1{
+    min-width: 30rem;
+    text-align: center;
+    font-size: 4rem;
+    padding-bottom: 3rem;
+    padding-top: 5rem;
+    color: #333;
+    /* color: var(--yellow); */
+}
+
+.posts .heading p{
+    text-align: center;
+    font-size: 1.8rem;
+    width: 60%;
+    padding-bottom: 2rem;
+    color: #666;
+    margin-bottom: 5rem;
+}
+
+
+.posts .c-multicol{
+    /* display: flex; */
+    display: columns;
+    columns: 3;
+    flex-wrap: wrap;
+    width: inherit;
+    margin-top: 3rem;
+    column-gap: 3rem;
+}
+
+.posts .c-multicol .post{
+    width: 100%;
+    margin-bottom: 3rem;
+    /* padding: 1rem; */
+    overflow: hidden;
+    break-inside: avoid;
+}
+
+.posts .c-multicol .post img{
+    height: 45vh;
+    width: 100%;
+    border-radius: 5px;
+    display: block;
+}
+
+.posts .c-multicol .post h2{
+    margin: 1rem 0;
+    padding: 0.5rem 0;
+    font-size: 3rem;
+    color: var(--yellow);
+    cursor: pointer;
+}
+
+.posts .c-multicol .post p{
+    margin-bottom: 0.5rem 0;
+    padding: 0.5rem 0;
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 300;
+    text-align: justify;
+}
+
+
+/* thoughts section */
+.thought{
+    min-width: 30rem;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-flow: column;
+}
+
+.thought h1{
+    text-align: center;
+    font-size: 6rem;
+    padding-bottom: 3rem;
+    padding-top: 5rem;
+    color: #333;
+}
+
+.thought p{
+    text-align: center;
+    font-size: 1.5rem;
+    width: 60%;
+    padding-bottom: 2rem;
+    color: #666;
+}
+
+.thought button{
+    text-align: center;
+    margin-bottom:3rem;
+}
+
+/* my story section */
+.story{
+    display: block;
+    transition: all 0.2s ease;
+    padding-top: 12rem;
+}
+
+.story .active{
+    display: block;
+}
+
+.story h3{
+    width: 80%;
+    font-weight: 400;
+    text-align: justify;
+    margin-bottom: 5rem;
+    font-size: 2rem;
+    padding: 0 2rem;
+    color: #666;
+    border-left: 0.4rem solid var(--yellow);
+}
+
+.story .cover{
+    display: flex;
+    flex-flow: row;
+    align-items: flex-start;
+    text-align: left;
+    flex-wrap: wrap;
+}
+
+.story .cover img{
+    flex: 1 1 40rem;
+    padding-right: 3rem;
+    height: 40rem;
+    flex-wrap: wrap;
+}
+
+.story .cover .content{
+    flex: 1 1 40rem;
+}
+.story .cover p{
+    text-align: justify;
+    margin-bottom: 3rem;
+    font-size: 1.5rem;
+    padding-left: 2rem;
+    color: #666;
+    border-left: 0.4rem solid var(--yellow);
+}
+
+
+
+/* contact section styling */
+.contact{
+
+}
+.contact .container{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    padding: 15rem 0;
+}
+
+.contact .container .text{
+    font-size: 4.5rem;
+    font-weight: 600;
+    font-family: 'Oswald', 'Roboto', sans-serif;
+}
+
+.contact .container .column{
+    width: 50%;
+    padding: 2rem;
+}
+
+.contact .container .left{
+    background: var(--lightyellow);
+    border-radius: 5px;
+}
+
+.contact .container .left p{
+    font-size: 1.4rem;
+    font-weight: 300;
+    padding: 2rem 0;
+}
+
+.contact .container .left .icons .row{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+}
+
+.contact .container .left .icons i{
+    font-size: 2rem;
+}
+
+.contact .container .left .icons .info{
+    margin-left: 2rem;
+}
+
+.contact .container .left .icons .info .head{
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.contact .container .left .icons .info .sub-title{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.contact .container .right{
+    border-radius: 5px;
+}
+
+.contact .container .right form{
+    margin-top: 2rem;
+}
+
+.contact .container .right form .fields{
+    margin-bottom: 1rem;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+.contact .right form .field{
+    height: 4rem;
+    margin-bottom: 1rem;
+}
+
+.contact .right form .name{
+    margin-right: 1rem;
+}
+
+.contact .right form .email{
+    margin-left: 1rem;
+}
+
+.contact .right form .field input,
+.contact .right form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    border: 1px solid #555;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 1rem;
+    font-size: 1.5rem;
+    font-family: 'Roboto;', sans-serif;
+    background: #fff;
+    color: #333;
+}
+
+.contact .right form .field:hover input,
+.contact .right form .textarea:hover textarea{
+    background: var(--lightyellow);
+}
+
+.contact .right form .textarea{
+    height: 80px;
+    width: 100%;
+}
+
+.contact .right form .textarea textarea{
+    padding-top: 10px;
+    resize: none;
+}
+
+.contact .right form .button{
+    height: 47px;
+    width: 170px;
+}
+
+.contact .right form .button button{
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    border: 2px solid #777;
+    background: none;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #666;
+    font-size: 1.5rem;
+}
+
+.contact .right form .button button:hover{
+    background: var(--lightyellow);
+}
+
+
+/* now go to media queries to set this up */
+
+
+/* now go to media queries to set this up */
+@media (max-width: 1289px) {
+    .story .cover{
+        flex-flow: row;
+        align-items: flex-start;
+        /* margin-bottom: 7rem; */
+    }
+}
+
+@media (max-width: 1150px) {
+    .contact .container{
+        flex-flow: column;
+        flex-wrap: wrap;
+        padding: 0;
+    }
+
+    .contact .container .column{
+        width: 100%;
+        padding: 2rem;
+    }
+}
+
+
+ @media (max-width: 1100px) {
+    /* my story section */
+    .story .cover{
+        flex-flow: column;
+        align-items: center;
+        /* margin-bottom: 7rem; */
+    }
+
+    .story .cover .content{
+        margin-top: 4rem;
+    }
+}
+
+@media (max-width:991px){
+    /* home section media query */
+    html{
+        font-size: 55%;
+    }
+
+    .home::before,
+    .home::after{
+        display: none;
+    }
+
+    /* post section */
+    .posts .c-multicol{
+        columns: 2;
+    }
+
+    .contact .container{
+        flex-flow: column;
+        flex-wrap: wrap;
+        padding: 0;
+    }
+}
+
+@media (max-width: 879px) {
+    .about .content{
+        text-align: center;
+    }
+}
+
+@media (max-width: 860px) {
+
+    .home{
+        padding-top: 12rem;
+    }
+
+    .home .content{
+        text-align: center;
+    }
+
+    .home .content h3{
+        font-size: 4.5rem;
+    }
+
+
+}
+
+@media (max-width: 770px) {
+
+    /* Navbar section media query */
+
+    /* decrease the font size */
+    html{
+        font-size: 55%;
+    }
+    /*  show the toggle sign burguer when decreased by certain width */
+    header #menu-bar{
+        display: block;
+    }
+
+    /* position the nabar horizontally on the comeplete width of the screen with styling */
+    header{
+        padding: 1.5rem 3%;
+    }
+
+    header .navbar{
+        position: fixed;
+        top:8rem; left:0;
+        width:100%;
+        margin-top: 1.5rem;
+        background:var(--yellow);
+        border-top: .2rem solid rgba(0,0,0,.1);
+        transform: scaleY(0);
+        transform-origin: top;
+        opacity: 0;
+    }
+
+    /* arrange vertically */
+    header .navbar ul{
+        flex-flow: column;
+        padding: 2rem;
+    }
+    /* style the spacing between the elements of the li */
+    header .navbar ul li{
+        margin: 1.5rem;
+        width: 100%;
+    }
+
+    /* color the li items white and show a line at front the front of it */
+    header .navbar ul li a{
+        display: block;
+        color: #fff;
+        padding-left: 2rem;
+        border-left: 0.2rem solid #fff;
+        font-size: 2rem;
+    }
+
+    /* when hover over the class then change color to  */
+    header .navbar ul li a:hover,
+    header .navbar ul li a.active{
+        color:#333;
+        border-color: #333;
+    }
+
+    /* when burger is clicked then rotate and bring close sign */
+    .fa-times{
+        transform: rotate(180deg);
+    }
+
+    /* when when clicked then bring the nav-toggle class in else out */
+    header .navbar.nav-toggle{
+        transform:scaleY(1);
+        opacity: 1;
+    }
+
+    /* Home section media query */
+
+    .order .row .image{
+        display: none;
+    }
+
+    /* post section */
+    .posts .c-multicol{
+        columns: 1;
+    }
+
+    .posts .c-multicol .post img{
+        height: 55vh;
+        width: 100%;
+        background-size: cover;
+    }
+
+    .story h3{
+        width: 100%;
+    }
+}
+
+
+
+@media (max-width: 660px) {
+    .home .image{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .home .content h3{
+        font-size: 2.5rem;
+    }
+
+    .home .content p{
+        font-size: 1.5rem
+    }
+
+    .about .image{
+        flex: 1 1 40rem;
+        height: 40rem;
+    }
+
+    .about .content{
+        flex: 1 1 40rem;
+        padding: 1rem 2rem;
+        text-align:center;
+    }
+
+    .thought h1{
+        font-size: 5rem;
+    }
+
+    .thought p{
+        font-size: 1.3rem;
+    }
+
+    .story .cover img{
+        width: 80vw;
+        height: 40vh;
+    }
+}
+
+@media (max-width: 510px) {
+    .contact .container .right form .fields{
+        flex-flow: column;
+        flex-wrap: wrap;
+    }
+
+    .contact .right form .name{
+        margin-right: 0rem;
+    }
+
+    .contact .right form .email{
+        margin-left: 0rem;
+    }
+
+    .posts .c-multicol .post img{
+        height: 45vh;
+    }
+}
