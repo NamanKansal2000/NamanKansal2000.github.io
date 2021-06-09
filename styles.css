@@ -588,7 +588,7 @@ section{
     /* my story section */
     .story .cover{
         flex-flow: column;
-        align-items: center;
+        align-items: flex-start;
         /* margin-bottom: 7rem; */
     }
 
