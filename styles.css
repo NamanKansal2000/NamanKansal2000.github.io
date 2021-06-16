@@ -775,6 +775,7 @@ section{
 }
 
 @media (max-width: 510px) {
+    
     .contact .container .right form .fields{
         flex-flow: column;
         flex-wrap: wrap;
@@ -791,4 +792,11 @@ section{
     .posts .c-multicol .post img{
         height: 45vh;
     }
+}
+
+@media (max-width: 400px){
+    
+    .home .image{
+    flex:1 1 29rem;
+}
 }
