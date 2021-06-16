@@ -773,9 +773,6 @@ section{
         width: 80vw;
         height: 40vh;
     }
-}
-
-@media (max-width: 510px) {
     
     .contact .container .right form .fields{
         flex-flow: column;
@@ -789,6 +786,9 @@ section{
     .contact .right form .email{
         margin-left: 0rem;
     }
+}
+
+@media (max-width: 510px) {
 
     .posts .c-multicol .post img{
         height: 45vh;
