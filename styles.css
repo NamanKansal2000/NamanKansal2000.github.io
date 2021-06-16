@@ -798,5 +798,6 @@ section{
     
     .home .image{
     flex:1 1 29rem;
-}
+    margin-top: 1rem;
+    }
 }
