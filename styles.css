@@ -794,8 +794,8 @@ section{
     }
     
     .home .image{
-    flex:1 1 29rem;
-    margin-top: 3rem;
+    flex:1 1 20rem;
+    padding-top: 3rem;
     }
     
 }
