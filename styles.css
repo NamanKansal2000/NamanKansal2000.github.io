@@ -792,16 +792,10 @@ section{
     .posts .c-multicol .post img{
         height: 45vh;
     }
-}
-
-@media (max-width: 400px){
     
     .home .image{
     flex:1 1 29rem;
     margin-top: 3rem;
     }
     
-    .contact{
-    margin-bottom: 50vh;
-    }
 }
