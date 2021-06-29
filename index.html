@@ -24,7 +24,11 @@
     <!-- <link rel="stylesheet" href="C:\Users\NAMAN\OneDrive\Desktop\Python\pesticide-master\css\pesticide.css"> -->
 
 </head>
-<body>
+<body onload="load()">
+
+    <!-- preloadder -->
+    <div id='loading'>
+    </div>
 
 <!-- header section starts  -->
 
@@ -159,7 +163,7 @@
     <section class="contact" id="contact">
         <div class="container">
 
-            <div class="column left">
+            <div class="column left" data-aos='zoom-in'>
                 <div class="text">Get in touch</div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis quo sint numquam iste saepe, excepturi reprehenderit in amet animi optio.</p>
                 <div class="icons">
@@ -191,9 +195,9 @@
                 </div>
             </div>
 
-            <div class="column right">
+            <div class="column right" data-aos='zoom-in' data-aos-delay="400">
                 <div class="text">Message me</div>
-                <form action="contact-form.php" method="post" name = 'contactform' id = 'contactform'>
+                <form action="" method="post" name = 'contactform' id = 'contactform'>
                     <div class="fields">
                         <div class="field name">
                             <input type="text" placeholder="Name" name="name" value="" required>
@@ -209,7 +213,7 @@
                     </div>
 
                     <div class="field textarea">
-                        <textarea cols="30" name = 'textarea' rows="10" placeholder="Describe project.. " name='message'></textarea>
+                        <textarea cols="30" name = 'textarea' rows="10" placeholder="Describe project.. "></textarea>
                     </div>
 
                     <div class="button">
@@ -236,6 +240,16 @@
           offset: 200,
           duration: 400
       });
+    </script>
+
+    <!-- preloader -->
+    <script>
+        var preloader = document.getElementById('loading');
+        function load(){
+            setTimeout( function(){
+           $('#loading').fadeOut('slow');
+       }, 4000 )
+        }
     </script>
 
 </body>
